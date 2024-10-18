@@ -26,15 +26,9 @@ SECRET_KEY = 'django-insecure-$fd!-hx4pnkghmi#2c9*x1d8eg26&u#b@@_a8cwz(7$eaj+#pk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    # '81.180.202.188',
-    # 'razvanvideo.ro',
-    '127.0.0.1',
-]
-
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', '81.180.202.188', 'razvanvideo.ro']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,7 +69,7 @@ TEMPLATES = [
 ]
 
 # from old server
-# WSGI_APPLICATION = 'core.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
@@ -129,14 +123,14 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles/"
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
