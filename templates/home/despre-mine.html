@@ -1,0 +1,403 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- Block title -->
+{% block title %}
+<title>Despre mine - Razvan Mirica</title>
+{% endblock %}
+
+<!-- Block content -->
+{% block content %}
+
+<!-- Breadcrumb Begin -->
+<div
+    class="breadcrumb-option spad set-bg"
+    data-setbg="{% static 'home/img/breadcrumb-bg.jpg' %}"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Despre mine</h2>
+                    <div class="breadcrumb__links">
+                        <a href="{% url 'home' %}">Home</a>
+                        <span>Despre mine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- About Section Begin -->
+<section class="about spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about__pic">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div
+                                class="about__pic__item about__pic__item--large set-bg"
+                                data-setbg="{% static 'home/img/about/despre-mine-Razvan-Mirica.png' %}"
+                            ></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div
+                                        class="about__pic__item set-bg"
+                                        data-setbg="{% static 'home/img/about/about-2.jpg' %}"
+                                    ></div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div
+                                        class="about__pic__item set-bg"
+                                        data-setbg="{% static 'home/img/about/about-3.jpg' %}"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about__text">
+                    <div class="section-title">
+                        <span>Despre mine</span>
+                        <h2>Vrei sa ma cunosti?</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img
+                                        src="{% static 'home/img/icons/si-3.png' %}"
+                                        alt=""
+                                    />
+                                </div>
+                                <h4>Filmari 24/24</h4>
+                                <p>
+                                    Suntem alaturi de voi 24/24, surprinzand
+                                    fiecare moment cu filmari de calitate,
+                                    pentru a fi mereu aproape de ceea ce
+                                    conteaza.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img
+                                        src="{% static 'home/img/icons/si-4.png' %}"
+                                        alt=""
+                                    />
+                                </div>
+                                <h4>Editare video</h4>
+                                <p>
+                                    Fiecare clipa conteaza, iar noi o vom edita
+                                    cu cea mai mare grija, pentru a pastra magia
+                                    fiecarui moment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__text__desc">
+                        <p>
+                            Totul a inceput dintr-o pasiune profunda pentru
+                            capturarea momentelor care conteaza cu adevarat.
+                            Prin fiecare filmare, pastram vie amintirea clipelor
+                            importante, transformandu-le in povesti ce vor
+                            dainui peste timp. Fiecare cadru este o bucata din
+                            sufletul nostru, dedicat artei de a imortaliza
+                            emotii si trairi unice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+<!-- Testimonial Section Begin -->
+<section
+    class="testimonial spad set-bg"
+    data-setbg="{% static 'home/img/testimonial-bg.jpg' %}"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title center-title">
+                    <span>Clientii mei</span>
+                    <h2>Ce spun oamenii despre mine?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="testimonial__slider owl-carousel">
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Am avut nunta pe data de 6 iulie 2024 , pe
+                                Razvan si George i am gasit prin intermediul
+                                unui prieten, ne au placut cum lucreaza asa ca
+                                am colaborat, nu ne a părut rau , totul a fost
+                                superb, poze , filmari pe masura dar si o
+                                comunicare frumoasa , se vede clar ca le place
+                                ceea ce fac , pe langa faptul ca iti ofera niste
+                                amintiri frumoase si de calitate , și pretul lor
+                                este unul super ok din punctul meu de vedere ,
+                                este pentru buzunarul oricui zic eu in ziua de
+                                azi 🤗 Multumim inca o data 🤗
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Alex-Biea-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Alex Biea</h5>
+                                <span>Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Cel mai bun cameraman și cel mai bun fotograf
+                                mulțumim din suflet pentru tot sunteți minunați
+                                !! Alături de voi am avut o nunta de poveste !!
+                                😊😘.
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Mihaela-Patriche-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Mihaela Patriche</h5>
+                                <span>Clienta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                In primul rand ținem să îți mulțumim din suflet
+                                pentru creativitate și pasiunea pe care o ai
+                                asupra muncii tale . 😘 Suntem foarte fericiți
+                                și împliniți ,in calitate de părinții,a fiului
+                                nostru Fabian-Andrei ,că te-am întâlnit și că ai
+                                reușit să faci ca botezul micuțului să iasă o
+                                poveste minunata de neuitat pt noi toții.💙
+                                Recomand din tot sufletul și cu toată încrederea
+                                la toata lumea pe Răzvan video Constanta ....un
+                                om de milioane 🤗
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Gabriela-Giuvelic-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Gabriela Giuvelic</h5>
+                                <span>Clienta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Mi-a placut foarte mult clipul pe care mi l-a
+                                facut la cununie. Imi place dedicarea lui Razvan
+                                Mirica. Il recomand pentru videoclipuri, daca
+                                vreti ceva unic si mirific.
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Andrei-Cojocaru-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Andrei Cojocaru</h5>
+                                <span>Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Totul la superlativ, echipament profesional,
+                                seriozitate si implicare maxima, talent
+                                nemarginit! Recomand cu incredere! Mulțumim! 🙏🏼
+                                …
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Viorel-Iacob-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Viorel Iacob</h5>
+                                <span>Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Multumim mult pentru serviciile oferite.
+                                Videoclipul de la nunta si de la botezul
+                                baietelului nostru au iesit minunat. ❤️
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/Cristina-Matees-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Cristina Matees</h5>
+                                <span>Clienta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>
+                                Seriozitatea și profesionalismul îl recomandă in
+                                primul rând.🔝 Dacă vă doriți o filmare pe care
+                                să o urmăriți cu drag de la evenimentele
+                                voastre, este alegerea potrivită. 👍🏻 …
+                            </p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img
+                                    src="{% static 'home/img/testimonial/George-Popa-recenzie-google.png' %}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>George Popa</h5>
+                                <span>Coleg Fotograf</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End -->
+
+<!-- Team Section Begin -->
+<!-- <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title team__title">
+                        <span>Nice to meet</span>
+                        <h2>OUR Team</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+                        <div class="team__item__text">
+                            <h4>AMANDA STONE</h4>
+                            <p>Videographer</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item team__item--second set-bg" data-setbg="img/team/team-2.jpg">
+                        <div class="team__item__text">
+                            <h4>AMANDA STONE</h4>
+                            <p>Videographer</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item team__item--third set-bg" data-setbg="img/team/team-3.jpg">
+                        <div class="team__item__text">
+                            <h4>AMANDA STONE</h4>
+                            <p>Videographer</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item team__item--four set-bg" data-setbg="img/team/team-4.jpg">
+                        <div class="team__item__text">
+                            <h4>AMANDA STONE</h4>
+                            <p>Videographer</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 p-0">
+                    <div class="team__btn">
+                        <a href="#" class="primary-btn">Meet Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!-- Team Section End -->
+
+{% endblock %}
