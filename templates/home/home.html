@@ -368,12 +368,11 @@
             <button id="toggleForm" class="btn btn-primary mt-3">
                 Adaugă o Recenzie
             </button>
-            <!-- Butonul este acum albastru -->
         </div>
 
         <div id="reviewForm" style="display: none; margin-top: 20px">
-            <!-- Formularul este ascuns inițial și are margine de sus -->
             <form
+                id="formReview"
                 method="post"
                 enctype="multipart/form-data"
                 class="bg-light p-4 rounded shadow"
@@ -427,6 +426,11 @@
                     Trimite Recenzia
                 </button>
             </form>
+            <div
+                id="thankYouMessage"
+                style="display: none; color: green; margin-top: 10px"
+            ></div>
+            <!-- Mesaj de mulțumire -->
         </div>
     </div>
 </section>
@@ -439,10 +443,47 @@
             if (form.style.display === "none" || form.style.display === "") {
                 form.style.display = "block";
                 this.innerText = "Ascunde Formularul";
+                // Focus pe câmpul numelui
+                form.querySelector('input[name="name"]').focus();
             } else {
                 form.style.display = "none";
                 this.innerText = "Adaugă o Recenzie";
             }
+        });
+
+    document
+        .getElementById("formReview")
+        .addEventListener("submit", function (event) {
+            event.preventDefault(); // Previi reîncărcarea paginii
+            var formData = new FormData(this);
+
+            fetch(this.action, {
+                method: this.method,
+                body: formData,
+                headers: {
+                    "X-CSRFToken": document.querySelector(
+                        "[name=csrfmiddlewaretoken]",
+                    ).value, // Includ CSRF token
+                },
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        document.getElementById("thankYouMessage").innerText =
+                            "Mulțumim de recenzie, aceasta urmează să fie aprobată!";
+                        document.getElementById(
+                            "thankYouMessage",
+                        ).style.display = "block";
+                        this.reset(); // Resetează formularul
+                    } else {
+                        alert(
+                            "A apărut o eroare, te rugăm să încerci din nou.",
+                        );
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    alert("A apărut o eroare, te rugăm să încerci din nou.");
+                });
         });
 </script>
 
