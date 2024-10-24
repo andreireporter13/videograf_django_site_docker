@@ -322,207 +322,131 @@
 </section>
 <!-- Counter Section End -->
 
+<!-- Testimonial Section Begin FROM DB -->
 <!-- Testimonial Section Begin -->
 <section
     class="testimonial spad set-bg"
     data-setbg="{% static 'home/img/testimonial-bg.jpg' %}"
 >
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title center-title">
-                    <span>Clientii mei</span>
-                    <h2>Ce spun oamenii despre mine?</h2>
+        <div class="section-title center-title">
+            <h2>Review-uri</h2>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="testimonial__slider owl-carousel">
+                {% for review in review_list %}
+                <div class="col-lg-4">
+                    <div class="testimonial__item">
+                        <div class="testimonial__text">
+                            <p>{{ review.content }}</p>
+                        </div>
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                {% if review.image %}
+                                <img
+                                    src="{{ review.image.url }}"
+                                    alt="{{ review.name }}"
+                                    class="img-fluid rounded-circle"
+                                />
+                                {% endif %}
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>{{ review.name }}</h5>
+                                <span>{{ review.get_role_display }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {% empty %}
+                <p>Nu sunt recenzii disponibile.</p>
+                {% endfor %}
             </div>
         </div>
-        <div class="row">
-            <div class="testimonial__slider owl-carousel">
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Am avut nunta pe data de 6 iulie 2024 , pe
-                                Razvan si George i am gasit prin intermediul
-                                unui prieten, ne au placut cum lucreaza asa ca
-                                am colaborat, nu ne a părut rau , totul a fost
-                                superb, poze , filmari pe masura dar si o
-                                comunicare frumoasa , se vede clar ca le place
-                                ceea ce fac , pe langa faptul ca iti ofera niste
-                                amintiri frumoase si de calitate , și pretul lor
-                                este unul super ok din punctul meu de vedere ,
-                                este pentru buzunarul oricui zic eu in ziua de
-                                azi 🤗 Multumim inca o data 🤗
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Alex-Biea-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Alex Biea</h5>
-                                <span>Client</span>
-                            </div>
-                        </div>
-                    </div>
+
+        <div class="section-title center-title mt-5">
+            <h2>Lasă o recenzie</h2>
+            <button id="toggleForm" class="btn btn-primary mt-3">
+                Adaugă o Recenzie
+            </button>
+            <!-- Butonul este acum albastru -->
+        </div>
+
+        <div id="reviewForm" style="display: none; margin-top: 20px">
+            <!-- Formularul este ascuns inițial și are margine de sus -->
+            <form
+                method="post"
+                enctype="multipart/form-data"
+                class="bg-light p-4 rounded shadow"
+            >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_name">Nume</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="id_name"
+                        class="form-control"
+                        placeholder="Introdu numele tău"
+                        required
+                    />
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Cel mai bun cameraman și cel mai bun fotograf
-                                mulțumim din suflet pentru tot sunteți minunați
-                                !! Alături de voi am avut o nunta de poveste !!
-                                😊😘.
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Mihaela-Patriche-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Mihaela Patriche</h5>
-                                <span>Clienta</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="id_content">Recenzie</label>
+                    <textarea
+                        name="content"
+                        id="id_content"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Scrie recenzia ta aici..."
+                        required
+                    ></textarea>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                In primul rand ținem să îți mulțumim din suflet
-                                pentru creativitate și pasiunea pe care o ai
-                                asupra muncii tale . 😘 Suntem foarte fericiți
-                                și împliniți ,in calitate de părinții,a fiului
-                                nostru Fabian-Andrei ,că te-am întâlnit și că ai
-                                reușit să faci ca botezul micuțului să iasă o
-                                poveste minunata de neuitat pt noi toții.💙
-                                Recomand din tot sufletul și cu toată încrederea
-                                la toata lumea pe Răzvan video Constanta ....un
-                                om de milioane 🤗
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Gabriela-Giuvelic-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Gabriela Giuvelic</h5>
-                                <span>Clienta</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="id_image">Imagine (opțional)</label>
+                    <input
+                        type="file"
+                        name="image"
+                        id="id_image"
+                        class="form-control-file"
+                    />
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Mi-a placut foarte mult clipul pe care mi l-a
-                                facut la cununie. Imi place dedicarea lui Razvan
-                                Mirica. Il recomand pentru videoclipuri, daca
-                                vreti ceva unic si mirific.
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Andrei-Cojocaru-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Andrei Cojocaru</h5>
-                                <span>Client</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="id_role">Rol</label>
+                    <select
+                        name="role"
+                        id="id_role"
+                        class="form-control"
+                        required
+                    >
+                        <option value="">Alege un rol...</option>
+                        <option value="client">Client</option>
+                        <option value="coleg">Coleg</option>
+                    </select>
                 </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Totul la superlativ, echipament profesional,
-                                seriozitate si implicare maxima, talent
-                                nemarginit! Recomand cu incredere! Mulțumim! 🙏🏼
-                                …
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Viorel-Iacob-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Viorel Iacob</h5>
-                                <span>Client</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Multumim mult pentru serviciile oferite.
-                                Videoclipul de la nunta si de la botezul
-                                baietelului nostru au iesit minunat. ❤️
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/Cristina-Matees-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Cristina Matees</h5>
-                                <span>Clienta</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial__item">
-                        <div class="testimonial__text">
-                            <p>
-                                Seriozitatea și profesionalismul îl recomandă in
-                                primul rând.🔝 Dacă vă doriți o filmare pe care
-                                să o urmăriți cu drag de la evenimentele
-                                voastre, este alegerea potrivită. 👍🏻 …
-                            </p>
-                        </div>
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img
-                                    src="{% static 'home/img/testimonial/George-Popa-recenzie-google.png' %}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>George Popa</h5>
-                                <span>Coleg Fotograf</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <button type="submit" class="btn btn-primary mt-3">
+                    Trimite Recenzia
+                </button>
+            </form>
         </div>
     </div>
 </section>
-<!-- Testimonial Section End -->
+
+<script>
+    document
+        .getElementById("toggleForm")
+        .addEventListener("click", function () {
+            var form = document.getElementById("reviewForm");
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+                this.innerText = "Ascunde Formularul";
+            } else {
+                form.style.display = "none";
+                this.innerText = "Adaugă o Recenzie";
+            }
+        });
+</script>
+
+<!-- Testimonial Section End FROM DB -->
 
 <!-- Team Section Begin -->
 <!-- <section class="team spad set-bg" data-setbg="{% static 'home/img/team-bg.jpg' %}">
