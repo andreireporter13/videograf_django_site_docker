@@ -1,23 +1,36 @@
-version: "3.8"
-
 services:
-  app:
+  razvanvideo:
     build: .
     volumes:
-      - .:/app
-    env_file:
-      - .env
+      - .:/razvanvideo
+      - ./staticfiles:/razvanvideo/staticfiles
+      - ./media:/razvanvideo/media
+      - ./templates:/razvanvideo/templates
     expose:
       - "8000"
 
   nginx:
     image: nginx:latest
+    depends_on:
+      - razvanvideo
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - static_volume:/app/staticfiles/
-      - media_volume:/app/media/
+      - ./docker/nginx/certs:/etc/nginx/certs
+      - ./staticfiles:/razvanvideo/staticfiles
+      - ./media:/razvanvideo/media
+      - ./templates:/razvanvideo/templates
+      # - ./docker/nginx/certbot/conf:/etc/letsencrypt
+      # - ./docker/nginx/certbot/www:/var/www/certbot
     ports:
       - "80:80"
+      - "443:443"
+    restart: always
+
+  # certbot:
+  #   image: certbot/certbot
+  #   volumes:
+  #     - ./docker/nginx/certbot/conf:/etc/letsencrypt
+  #     - ./docker/nginx/certbot/www:/var/www/certbot
 
 volumes:
   static_volume:
