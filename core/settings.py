@@ -47,6 +47,11 @@ CORS_ALLOWED_ORIGINS = [
     'https://www.razvanvideo.ro',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://razvanvideo.ro',
+    'https://www.razvanvideo.ro',
+]
+
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
