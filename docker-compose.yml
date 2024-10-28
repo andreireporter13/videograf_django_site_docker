@@ -1,11 +1,10 @@
+version: '3.8'
+
 services:
   razvanvideo:
     build: .
     volumes:
-      - .:/razvanvideo
-      - ./staticfiles:/razvanvideo/staticfiles
-      - ./media:/razvanvideo/media
-      - ./templates:/razvanvideo/templates
+      - .:/app
     expose:
       - "8000"
     restart: always
@@ -17,13 +16,10 @@ services:
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./docker/nginx/certs:/etc/nginx/certs
-      - ./staticfiles:/razvanvideo/staticfiles
-      - ./media:/razvanvideo/media
-      - ./templates:/razvanvideo/templates
-      - ./docker/nginx/certbot/conf:/etc/letsencrypt
-      - ./docker/nginx/certbot/www:/var/www/certbot
+      - ./staticfiles:/app/staticfiles
+      - ./media:/app/media
     ports:
-      - "8080:80"
+      - "80:80"
       - "443:443"
     restart: always
 
