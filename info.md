@@ -8,6 +8,11 @@ docker-compose up --build
 
 docker-compose up -d
 
+# linux
+sudo systemctl start docker.service
+sudo systemctl stop docker.service
+sudo systemctl enable docker.service
+
 
 ####################################################################################################
 # Ghid pentru gestionarea aplicației Docker

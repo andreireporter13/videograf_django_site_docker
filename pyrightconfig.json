@@ -1,0 +1,5 @@
+{
+  "reportMissingImports": false,
+  "venvPath": "./venv",
+  "venv": "venv"
+}
