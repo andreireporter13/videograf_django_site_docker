@@ -8,6 +8,7 @@ services:
       - ./templates:/razvanvideo/templates
     expose:
       - "8000"
+    restart: always
 
   nginx:
     image: nginx:latest
