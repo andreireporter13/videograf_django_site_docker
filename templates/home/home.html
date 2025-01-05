@@ -173,7 +173,7 @@
         <div class="image-row">
             <div class="col-12 text-center mb-4">
                 <h3 class="promo-text-custom">Ofertele anului 2025 sunt aici!</h3> <!-- Clasa personalizată pentru h3 -->
-                <p class="promo-subtext-custom">Profitați acum de oferte speciale pentru evenimentele voastre!</p> <!-- Clasa personalizată pentru p -->
+                <p class="promo-subtext-custom">Profitați acum de oferte speciale pentru evenimentele dumneavoastra!</p> <!-- Clasa personalizată pentru p -->
             </div>
         </div>
         <!-- Imaginile sunt centrate în continuare -->
@@ -207,25 +207,20 @@
 
 <!-- JavaScript -->
 <script>
-    // Funcție pentru deschiderea lightbox-ului
     function openLightbox(img) {
         var modal = document.getElementById("lightboxModal");
         var modalImage = document.getElementById("lightboxImage");
 
-        // Setează sursa imaginii în lightbox
         modalImage.src = img.src;
 
-        // Afișează lightbox-ul
         modal.style.display = "flex";
     }
 
-    // Funcție pentru închiderea lightbox-ului
     function closeLightbox() {
         var modal = document.getElementById("lightboxModal");
         modal.style.display = "none"; // Ascunde modalul
     }
 
-    // Închide lightbox dacă se face click în afara imaginii
     window.onclick = function(event) {
         var modal = document.getElementById("lightboxModal");
         if (event.target == modal) {
@@ -233,89 +228,94 @@
         }
     }
 
-    // Asigură-te că lightbox-ul nu se activează automat la refresh
+
     window.onload = function() {
-        // Asigură-te că lightbox-ul este ascuns când se încarcă pagina
         var modal = document.getElementById("lightboxModal");
         modal.style.display = "none";
     };
 </script>
 
 <style>
-    /* Stiluri pentru text personalizat - H3 și P */
-    .promo-text-custom {
-        color: white; /* Text alb */
-        border-top: 4px solid #ffffff; /* Linia deasupra textului */
-        padding-top: 20px; /* Distanță între linie și text */
-        padding-bottom: 20px; /* Distanță sub text */
-    }
+   /* Stiluri pentru text personalizat - H3 și P */
+.promo-text-custom {
+    color: white;
+    border-top: 4px solid #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
-    .promo-subtext-custom {
-        color: white; /* Text alb */
-    }
+.promo-subtext-custom {
+    color: white; /* Text alb */
+}
 
-    /* Alte stiluri pentru imagini */
-    .images-section {
-        background-color: #100028; /* Fundal albastru închis */
-        padding: 100px 0; /* Spațiu sus și jos pentru secțiune */
-        text-align: center; /* Centrare generală pentru text */
-    }
+/* Alte stiluri pentru imagini */
+.images-section {
+    background-color: #100028;
+    padding: 100px 0;
+    text-align: center;
+}
 
-    /* Flexbox pentru aliniere orizontală a pozelor */
-    .image-row {
-        display: flex; /* Flexbox pentru aliniere orizontală a pozelor */
-        justify-content: center; /* Centrare pe orizontală */
-        align-items: center; /* Centrare pe verticală */
-        gap: 20px; /* Spațiu între imagini */
-    }
+/* Flexbox pentru aliniere orizontală a pozelor */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-    /* Coloană pentru imagini */
-    .image-row .col-lg-5 {
-        display: flex;
-        justify-content: center; /* Centrare pe orizontală a fiecărei imagini */
-        align-items: center; /* Centrare pe verticală a imaginii */
-        margin-bottom: 20px; /* Distanță între imagini */
-        width: auto; /* Dimensiuni flexibile */
-        padding: 10px; /* Spațiu între imagini */
-    }
+/* Coloană pentru imagini */
+.image-row .col-lg-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: auto;
+    padding: 10px;
+}
 
+.custom-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-img:hover {
+    transform: scale(1.2);
+}
+
+/* Poze mult mai mari pe desktop */
+@media (min-width: 992px) {
     .custom-img {
-        max-width: 100%; /* Asigurăm că se ajustează pe dispozitive mici */
-        height: auto;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 95%;
+        max-width: 100%;
     }
 
-    .custom-img:hover {
-        transform: scale(1.2); /* Poza devine mult mai mare pe hover */
+    .image-row .col-lg-5 {
+        width: 45%; 
+        padding: 10px;
+    }
+}
+
+/* Poze și coloană responsive pentru mobil (sub 767px) */
+@media (max-width: 767px) {
+    .custom-img {
+        width: 100%;
+        max-width: 100%;
     }
 
-    /* Poze mult mai mari pe desktop */
-    @media (min-width: 992px) {
-        .custom-img {
-            width: 95%;
-            max-width: 100%;
-        }
-
-        .image-row .col-lg-5 {
-            width: 45%; 
-            padding: 10px;
-        }
+    .image-row {
+        flex-direction: column;
     }
 
-    /* Poze și coloană responsive pentru mobil */
-    @media (max-width: 767px) {
-        .custom-img {
-            width: 100%;
-            max-width: 100%;
-        }
-
-        .image-row .col-lg-5 {
-            margin-bottom: 20px;
-            padding: 5px;
-        }
+    .image-row .col-lg-5 {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
     }
+}
+
 </style>
 <!-- Images Section Begin -->
 
