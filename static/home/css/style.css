@@ -2196,3 +2196,72 @@ Header
     }
 }
 
+
+/* General Styles */
+.images-section {
+    background-color: #100028; /* Fundal albastru închis */
+    padding: 100px 0; /* Adăugăm mai mult spațiu sus și jos pentru secțiune */
+    text-align: center; /* Centrare generală pentru text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Folosim întreaga înălțime a ecranului pentru aliniere verticală */
+}
+
+/* Column Styles */
+.row {
+    display: flex; /* Flexbox pentru aliniere orizontală a pozelor */
+    justify-content: center; /* Centrare pe orizontală */
+    align-items: center; /* Centrare pe verticală */
+    gap: 20px; /* Spațiu între imagini */
+}
+
+/* Poziționare imagini */
+.row .col-lg-5 {
+    display: flex;
+    justify-content: center; /* Centrare pe orizontală */
+    align-items: center; /* Centrare pe verticală */
+    margin-bottom: 20px; /* Distanță între imagini */
+    width: auto; /* Dimensiuni flexibile */
+    padding: 10px; /* Spațiu între imagini */
+}
+
+/* Image Styles */
+.custom-img {
+    max-width: 100%; /* Asigurăm că se ajustează pe dispozitive mici */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Efect hover pentru imagini */
+.custom-img:hover {
+    transform: scale(1.2); /* Poza devine mult mai mare pe hover */
+}
+
+/* Poze mult mai mari pe desktop */
+@media (min-width: 992px) { /* Desktop */
+    .custom-img {
+        width: 95%; /* Poze mult mai mari (95% din coloană) */
+        max-width: 100%; /* Se ajustează pentru a nu depăși limita containerului */
+    }
+
+    .row .col-lg-5 {
+        width: 45%; /* Lăsăm pozelor mai mult spațiu pe desktop */
+        padding: 10px; /* Ajustăm padding-ul pentru desktop */
+    }
+}
+
+/* Poze și coloană responsive pentru mobil */
+@media (max-width: 767px) { /* Mobil */
+    .custom-img {
+        width: 100%; /* Poze responsive pe telefon */
+        max-width: 100%;
+    }
+
+    .row .col-lg-5 {
+        margin-bottom: 20px; /* Distanță între imagini pe telefon */
+        padding: 5px; /* Ajustăm padding-ul pentru mobil */
+    }
+}

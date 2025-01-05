@@ -1,6 +1,9 @@
 # ssl certificates
 docker-compose run --rm certbot certonly --webroot -w /var/www/certbot -d razvanvideo.ro -d www.razvanvideo.ro
 
+# collect static in django web project with docker
+docker-compose exec django python manage.py collectstatic --noinput
+
 #
 docker-compose down
 
