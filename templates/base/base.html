@@ -164,9 +164,46 @@
         <!-- Header End -->
         
         <!-- Call Button -->
-        <div class="call-container">
-            <a href="tel:+40722261486" class="call-button">Suna-ma acum! Pentru detalii.</a>
+        <div class="call-container" style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; flex-direction: row-reverse; z-index: 9999;">
+            <a href="tel:+40722261486" class="call-button" style="
+                background-color: #28a745;
+                color: #fff;
+                padding: 15px 25px;
+                font-size: 16px;
+                border-radius: 50px;
+                text-align: center;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                animation: pulse 3s infinite;
+                z-index: 9999;">
+                Suna-ma acum! Pentru detalii.
+            </a>
         </div>
+        
+        <style>
+            /* Animație de pulsare */
+            @keyframes pulse {
+                0% {
+                    transform: scale(1); /* Mărimea normală a butonului */
+                }
+                50% {
+                    transform: scale(1.1); /* Mărirea butonului */
+                }
+                100% {
+                    transform: scale(1); /* Întoarcerea la mărimea normală */
+                }
+            }
+        
+            /* Stilele suplimentare pentru hover */
+            .call-button:hover {
+                background-color: #218838;
+                transform: scale(1.05);
+            }
+        </style>
 
         <!-- block content -->
          
