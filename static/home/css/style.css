@@ -145,6 +145,7 @@ ol {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    top: 10%;
 }
 
 .spad {
@@ -294,11 +295,11 @@ ol {
   Header
 -----------------------*/
 .header {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
-    background: transparent;
+    background-color: #100028;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 9;
 }
@@ -476,8 +477,8 @@ ol {
 }
 
 .hero__item {
-    height: 684px;
-    padding-top: 255px;
+    height: 30%;
+    padding-top: 20%;
 }
 
 .hero__text span {
@@ -488,12 +489,12 @@ ol {
     text-transform: uppercase;
     margin-bottom: 18px;
     position: relative;
-    top: 100px;
+    top: 5%;
+    transform: translateY(-50%);
     opacity: 0;
-    -webkit-transition: all, 0.3s;
-    -o-transition: all, 0.3s;
-    transition: all, 0.3s;
+    transition: all 0.3s ease;
 }
+
 .hero__text h2 {
     color: #ffffff;
     font-size: 60px;
@@ -502,21 +503,19 @@ ol {
     text-transform: uppercase;
     margin-bottom: 38px;
     position: relative;
-    top: 100px;
+    top: 5%;
+    transform: translateY(-50%);
     opacity: 0;
-    -webkit-transition: all, 0.5s;
-    -o-transition: all, 0.5s;
-    transition: all, 0.5s;
-}
-.hero__text .primary-btn {
-    position: relative;
-    top: 100px;
-    opacity: 0;
-    -webkit-transition: all, 0.7s;
-    -o-transition: all, 0.7s;
-    transition: all, 0.7s;
+    transition: all 0.5s ease;
 }
 
+.hero__text .primary-btn {
+    position: relative;
+    top: 5%; /* Schimbăm de la 100px la 50% pentru a aduce butonul mai sus */
+    transform: translateY(-50%); /* Ajustăm pentru a-l poziționa central pe verticală */
+    opacity: 0;
+    transition: all 0.7s ease;
+}
 /*---------------------
   Work
 -----------------------*/
@@ -2192,5 +2191,138 @@ ol {
     .testimonial__item {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+}
+
+
+/* General Styles */
+.images-section {
+    background-color: #100028; /* Fundal albastru închis */
+    padding: 50px 0; /* Spațiu sus și jos pentru secțiune */
+    text-align: center; /* Centrare generală pentru text */
+    display: flex; /* Folosim Flexbox */
+    flex-direction: column; /* Aranjăm elementele pe verticală */
+    justify-content: center; /* Centrarea pe verticală */
+    align-items: center; /* Centrarea pe orizontală */
+}
+
+/* Text Styles */
+.promo-text {
+    font-size: 40px; /* Titlu mai mare */
+    font-weight: 700; /* Titlu bold */
+    margin-bottom: 10px;
+    text-align: center;
+    border-top: 4px solid #ffffff; /* Linie deasupra textului */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #ffffff; /* Text alb */
+}
+
+.promo-subtext {
+    font-size: 20px; /* Subtitlu mai mare */
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff; /* Text alb */
+}
+
+/* Image Styles */
+.custom-img {
+    width: 100%; /* Imagini responsive pentru toate dimensiunile de ecran */
+    height: auto;
+    max-width: 100%; /* Asigurăm că se ajustează pe ecran */
+    border-radius: 10px; /* Colțuri rotunjite */
+    transition: transform 0.3s ease; /* Efect de zoom la hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Umbră pentru imagini */
+    display: block; /* Asigurăm că imaginea este bloc pentru centrare */
+    margin-left: auto; /* Centrare orizontală */
+    margin-right: auto; /* Centrare orizontală */
+}
+
+/* Efect hover pentru imagini */
+.custom-img:hover {
+    transform: scale(1.2); /* Poza devine mult mai mare pe hover */
+}
+
+/* Column Styles */
+.row .col-lg-5 {
+    display: flex;
+    justify-content: center; /* Centrare pe orizontală */
+    align-items: center; /* Centrare pe verticală */
+    margin-bottom: 20px; /* Distanță între rânduri */
+    padding: 10px; /* Spațiu între imagini */
+    width: 100%; /* Asigurăm că colțurile se umplu complet pe dispozitive mici */
+}
+
+/* Poze mult mai mari pe desktop */
+@media (min-width: 992px) { /* Desktop */
+    .custom-img {
+        width: 95%; /* Poze mult mai mari (95% din coloană) */
+        max-width: 100%; /* Se ajustează pentru a nu depăși limita containerului */
+    }
+
+    .row .col-lg-5 {
+        width: 45%; /* Lăsăm pozelor mai mult spațiu pe desktop */
+        padding: 10px; /* Ajustăm padding-ul pentru desktop */
+    }
+}
+
+/* Poze și coloană responsive pentru mobil */
+@media (max-width: 767px) { /* Mobil */
+    .custom-img {
+        width: 100%; /* Poze responsive pe telefon */
+        max-width: 100%;
+    }
+
+    .row .col-lg-5 {
+        margin-bottom: 20px; /* Distanță între imagini pe telefon */
+        padding: 5px; /* Ajustăm padding-ul pentru mobil */
+    }
+}
+
+
+/* Button call me */
+.call-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    z-index: 9999; /* Asigură că este deasupra altor elemente */
+}
+
+.call-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 3s infinite; /* Modificăm durata animației la 3 secunde */
+    z-index: 9999; /* Asigură că butonul este deasupra altor elemente */
+}
+
+.call-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Animație de pulsare */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Mărimea normală a butonului */
+    }
+    50% {
+        transform: scale(1.1); /* Mărirea butonului */
+    }
+    100% {
+        transform: scale(1); /* Întoarcerea la mărimea normală */
     }
 }

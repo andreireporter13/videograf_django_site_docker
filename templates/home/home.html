@@ -8,8 +8,10 @@
 <!-- Block content -->
 {% block content %}
 <!-- Hero Section Begin -->
+
 <section class="hero">
     <div class="hero__slider owl-carousel">
+ 
         <div
             class="hero__item set-bg"
             data-setbg="{% static 'home/img/hero/hero-1.png' %}"
@@ -18,7 +20,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <span>Videograf evenimente - Constanta</span>
+                            <span>Videograf evenimente <br> Constanta</span>
                             <h2>Razvan Mirica</h2>
                             <a
                                 href="{% url 'evenimente-constanta-nunta-botez-majorat-si-altele' %}"
@@ -163,6 +165,84 @@
     </div>
 </section>
 <!-- Services Section End -->
+
+<!-- Images Section Begin -->
+<!-- Images Section Begin -->
+<!-- Images Section Begin -->
+<section class="images-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h3 class="promo-text">Ofertele anului 2025 sunt aici!</h3>
+                <p class="promo-subtext">Profitați acum de oferte speciale pentru evenimentele voastre!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-12 mb-4">
+                <img
+                    src="{% static 'home/img/fluturas1.jpeg' %}"
+                    alt="Fluturaș 1"
+                    class="img-fluid custom-img"
+                    onclick="openLightbox(this)"
+                />
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12 mb-4">
+                <img
+                    src="{% static 'home/img/fluturas2.jpeg' %}"
+                    alt="Fluturaș 2"
+                    class="img-fluid custom-img"
+                    onclick="openLightbox(this)"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Images Section End -->
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <span onclick="closeLightbox()" style="position: absolute; top: 20px; right: 20px; font-size: 30px; color: white; cursor: pointer; z-index: 10000;">×</span>
+    <img id="lightboxImage" src="" alt="Lightbox Image" style="max-width: 90%; max-height: 90%; margin: auto; display: block;" />
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Funcție pentru deschiderea lightbox-ului
+    function openLightbox(img) {
+        var modal = document.getElementById("lightboxModal");
+        var modalImage = document.getElementById("lightboxImage");
+
+        // Setează sursa imaginii în lightbox
+        modalImage.src = img.src;
+
+        // Afișează lightbox-ul
+        modal.style.display = "flex";
+    }
+
+    // Funcție pentru închiderea lightbox-ului
+    function closeLightbox() {
+        var modal = document.getElementById("lightboxModal");
+        modal.style.display = "none"; // Ascunde modalul
+    }
+
+    // Închide lightbox dacă se face click în afara imaginii
+    window.onclick = function(event) {
+        var modal = document.getElementById("lightboxModal");
+        if (event.target == modal) {
+            closeLightbox();
+        }
+    }
+
+    // Asigură-te că lightbox-ul nu se activează automat la refresh
+    window.onload = function() {
+        // Asigură-te că lightbox-ul este ascuns când se încarcă pagina
+        var modal = document.getElementById("lightboxModal");
+        modal.style.display = "none";
+    };
+</script>
+
+
+
 
 <!-- Work Section Begin -->
 <section class="work">

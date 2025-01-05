@@ -180,3 +180,22 @@
     });
 
 })(jQuery);
+
+
+// Deschide lightbox-ul
+function openLightbox(img) {
+    var modal = document.getElementById("lightboxModal");
+    var modalImage = document.getElementById("lightboxImage");
+
+    // Setează sursa imaginii în lightbox
+    modalImage.src = img.src;
+
+    // Afișează lightbox-ul
+    modal.style.display = "flex";
+}
+
+// Închide lightbox-ul
+function closeLightbox() {
+    var modal = document.getElementById("lightboxModal");
+    modal.style.display = "none"; // Ascunde modalul
+}
