@@ -169,13 +169,15 @@
 <!-- Images Section Begin -->
 <section class="images-section">
     <div class="container">
-        <div class="row">
+        <!-- Textul are acum clase separate pentru stiluri clare -->
+        <div class="image-row">
             <div class="col-12 text-center mb-4">
-                <h3 class="promo-text">Ofertele anului 2025 sunt aici!</h3>
-                <p class="promo-subtext">Profitați acum de oferte speciale pentru evenimentele voastre!</p>
+                <h3 class="promo-text-custom">Ofertele anului 2025 sunt aici!</h3> <!-- Clasa personalizată pentru h3 -->
+                <p class="promo-subtext-custom">Profitați acum de oferte speciale pentru evenimentele voastre!</p> <!-- Clasa personalizată pentru p -->
             </div>
         </div>
-        <div class="row">
+        <!-- Imaginile sunt centrate în continuare -->
+        <div class="image-row">
             <div class="col-lg-5 col-md-6 col-sm-12 mb-4">
                 <img
                     src="{% static 'home/img/fluturas1.jpeg' %}"
@@ -240,40 +242,38 @@
 </script>
 
 <style>
-    /* Text Styles - Adăugăm linie deasupra titlului și text alb */
-    .promo-text {
-        color: white; /* Face textul alb */
+    /* Stiluri pentru text personalizat - H3 și P */
+    .promo-text-custom {
+        color: white; /* Text alb */
         border-top: 4px solid #ffffff; /* Linia deasupra textului */
         padding-top: 20px; /* Distanță între linie și text */
         padding-bottom: 20px; /* Distanță sub text */
     }
 
-    .promo-subtext {
-        color: white; /* Face textul alb */
+    .promo-subtext-custom {
+        color: white; /* Text alb */
     }
 
-    /* Alte stiluri rămân aceleași */
+    /* Alte stiluri pentru imagini */
     .images-section {
         background-color: #100028; /* Fundal albastru închis */
         padding: 100px 0; /* Spațiu sus și jos pentru secțiune */
         text-align: center; /* Centrare generală pentru text */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Folosim întreaga înălțime a ecranului pentru aliniere verticală */
     }
 
-    .row {
+    /* Flexbox pentru aliniere orizontală a pozelor */
+    .image-row {
         display: flex; /* Flexbox pentru aliniere orizontală a pozelor */
         justify-content: center; /* Centrare pe orizontală */
         align-items: center; /* Centrare pe verticală */
         gap: 20px; /* Spațiu între imagini */
     }
 
-    .row .col-lg-5 {
+    /* Coloană pentru imagini */
+    .image-row .col-lg-5 {
         display: flex;
-        justify-content: center; /* Centrare pe orizontală */
-        align-items: center; /* Centrare pe verticală */
+        justify-content: center; /* Centrare pe orizontală a fiecărei imagini */
+        align-items: center; /* Centrare pe verticală a imaginii */
         margin-bottom: 20px; /* Distanță între imagini */
         width: auto; /* Dimensiuni flexibile */
         padding: 10px; /* Spațiu între imagini */
@@ -298,7 +298,7 @@
             max-width: 100%;
         }
 
-        .row .col-lg-5 {
+        .image-row .col-lg-5 {
             width: 45%; 
             padding: 10px;
         }
@@ -311,7 +311,7 @@
             max-width: 100%;
         }
 
-        .row .col-lg-5 {
+        .image-row .col-lg-5 {
             margin-bottom: 20px;
             padding: 5px;
         }
